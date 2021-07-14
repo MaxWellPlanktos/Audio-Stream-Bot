@@ -119,14 +119,14 @@ async def main(bot):
     try:
         # query devices
         if args.query:
-            #if platform.system() == 'Linux':
-            #    for source in pulsectl.Pulse('localhost').source_list():
-            #        print(source.name, '| Desc:', source.description)
+            if platform.system() == 'Linux':
+                for source in pulsectl.Pulse('localhost').source_list():
+                    print(source.name, '| Desc:', source.description)
 
-            #    return
-            #else:
-            for device, index in sound.query_devices().items():
-                print(index, device)
+                return
+            else:
+                for device, index in sound.query_devices().items():
+                    print(index, device)
 
             return
 
