@@ -1,0 +1,15 @@
+version: '3.7'
+services:
+  asb:
+    image: python
+    container_name: asb
+    hostname: asb
+    build:
+      context: .
+    environment:
+      TOKEN: "<set discord app bot token here>"
+      CHANNEL: 01234567890123456789
+      DEVICE: "/dev/virtualmic"
+    #devices:
+    #  - "/dev/virtualmic:/dev/virtualmic"
+    network_mode: host
